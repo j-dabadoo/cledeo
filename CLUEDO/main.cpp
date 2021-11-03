@@ -1,39 +1,40 @@
-#include "header.h"
+#include "sprgm.h"
+using namespace std;
 
-
+////////////////////////////////////////
+//        ECRIRE UNE STD::STRING      //
+//       nom de la string.c_str()     //
+////////////////////////////////////////
 
 int main()
 {
-    std::vector <Carte> cartes ; ///non mélangées
-    std::vector <Carte> cartes2 ;///Mélangées
-    std::vector <Carte> secret ;///Pochette secrète de 3 cartes
-    std::vector <Joueur> joueurs;///Ensemble des joueurs
+    BITMAP* plateau;
+    BITMAP* page;
+    std::string lieuactuel;
 
-    int nb_joueurs ;
+    ///initialisation d'allegro
+    initialisation_allegro();
+    ///creation du ouble buffer
+    page=create_bitmap(SCREEN_W, SCREEN_H);
 
+    /*initialisation aleatoire du lieu du joueur
+    lieuactuel=lieuxhasard();
+    textprintf_ex(page,font, 600, 40,makecol(255, 0, 0), -1, "attention vous etes en ");
+    textprintf_ex(page,font, 800, 40,makecol(255, 0, 0), -1, "%s", lieuactuel.c_str());*/
 
-    /// INITIALISATIONS
-
-    allegroInit();
-    cardInit(joueurs, cartes, cartes2);
-    distribCarte(cartes2, secret, joueurs);
-
-
-
-    ///BOUCLE D'ÉVÈNEMENTS
-
-    while(!key[KEY_ESC])
+    ///boucle pour lancer
+    while(1)
     {
-        menu(); ///Premier menu : appuie sur jouer
-        nb_joueurs = choix_nbj();   ///2e : choisi le nombre de joueurs
-        launch(); ///3e : lancement de partie sauvegardée, nouvelle partie...
+        ///affichage du second plateau
+        show_mouse(page);
+        //plateaudebase(page);
+        plateau_hyp(page);
+
+        blit(page, screen, 0,0,0,0,SCREEN_W,SCREEN_H);
+
+
     }
+    return 0;
+}
+END_OF_MAIN();
 
-
-    ///Destruction des bitmap
-    destruction(cartes);
-
-    allegro_exit();
-    return 0 ;
-
-}END_OF_MAIN();
