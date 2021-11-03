@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1635969277 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\initialisations.cpp
+	"header.h"
+
+1635971368 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+	<fstream>
+
+1635970264 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\include\joueur.h
+	"Carte.h"
+
+1635491086 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\src\carte.cpp
+	"Carte.h"
+
+1635970276 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\main.cpp
+	"header.h"
+
+1635944268 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1635971368 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\leprojet\src\joueur.cpp
+	"Joueur.h"
+
