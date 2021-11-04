@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1636018458 source:c:\users\alexl\desktop\cluedo\main.cpp
+	"header.h"
+
+1635952017 source:c:\users\alexl\desktop\cluedo\src\carte.cpp
+	"Carte.h"
+
+1635968454 c:\users\alexl\desktop\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636018416 source:c:\users\alexl\desktop\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636017761 c:\users\alexl\desktop\cluedo\include\joueur.h
+	"Carte.h"
+
+1636017243 source:c:\users\alexl\desktop\cluedo\initialisations.cpp
+	"header.h"
+
+1636017243 c:\users\alexl\desktop\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636016837 source:c:\users\alexl\desktop\cluedo\menus.cpp
+	"header.h"
+
