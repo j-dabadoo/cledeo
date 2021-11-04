@@ -25,6 +25,9 @@ int launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, std::vect
 ///3e menu : choix du nombre de joueurs (dans le cas ou on lance une nouvelle partie)
 int choix_nbj();
 
+///4e menu : choix de la couleur du pion du joueur
+void choix_couleur(Joueur& lejoueur);
+
 ///Initialise la matrice du plateau
 std::vector<std::vector<char>> initPlateau() ;
 

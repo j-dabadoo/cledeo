@@ -120,6 +120,11 @@ int launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, std::vect
             ///Distribution des cartes
             distribCarte(cartes2, secret, joueurs, nb_joueurs);
 
+            for(int i=0; i<nb_joueurs; i++)
+            {
+                choix_couleur(joueurs[i]);
+            }
+
         break ;
 
         ///Partie sauvegardée
@@ -177,8 +182,124 @@ int choix_nbj()
         blit(menu, buffer, 0, 0, 0, 0, menu->w, menu->h);
         blit(buffer, screen, 0, 0, 0, 0, buffer->w, buffer->h);
     }
+    destroy_bitmap(menu);
 
     return nb_joueurs ;
 }
 
+void choix_couleur(Joueur& lejoueur)
+{
+    int choisi=0 ;
+    BITMAP* menu = load_bitmap("images/choix_couleur.bmp", NULL) ;
+    BITMAP* red = load_bitmap("images/pionR.bmp", NULL);
+    BITMAP* yellow = load_bitmap("images/pionY.bmp", NULL);
+    BITMAP* blue = load_bitmap("images/pionB.bmp", NULL);
+    BITMAP* green = load_bitmap("images/pionG.bmp", NULL);
+    BITMAP* violet = load_bitmap("images/pionV.bmp", NULL);
+    BITMAP* white = load_bitmap("images/pionW.bmp", NULL);
 
+    BITMAP* logo = create_bitmap(23, 25);
+    clear_bitmap(logo);
+    BITMAP* buffer = create_bitmap(SCREEN_W, SCREEN_H);
+
+    while(choisi==0)
+    {
+        clear_bitmap(buffer);
+        blit(menu, buffer, 0, 0, 0, 0, menu->w, menu->h);
+            if(mouse_y>215 && mouse_y<385 && mouse_x>225 && mouse_x < 375)
+            {
+                masked_blit(red, buffer, 0, 0, 225, 213, SCREEN_W, SCREEN_H);
+                if(mouse_b&1)
+                {
+                    choisi=1 ;
+                    lejoueur.setCouleur("rouge");
+                    stretch_blit(red, logo, 0,0, red->w, red->h, 0,0,logo->w, logo->h);
+                    lejoueur.setImagePion(logo);
+                    lejoueur.setPosX(10);
+                    lejoueur.setPosY(0);
+                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                }
+            }
+            if(mouse_y>215 && mouse_y<385 && mouse_x>525 && mouse_x < 675)
+            {
+                masked_blit(yellow, buffer, 0, 0, 525, 213, SCREEN_W, SCREEN_H);
+                if(mouse_b&1)
+                {
+                    choisi=1 ;
+                    lejoueur.setCouleur("jaune");
+                    stretch_blit(yellow, logo, 0,0, yellow->w, yellow->h, 0,0,logo->w, logo->h);
+                    lejoueur.setImagePion(logo);
+                    lejoueur.setPosX(15);
+                    lejoueur.setPosY(0);
+                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+               }
+            }
+            if(mouse_y>215 && mouse_y<385 && mouse_x>825 && mouse_x < 975)
+            {
+                masked_blit(blue, buffer, 0, 0, 825, 213, SCREEN_W, SCREEN_H);
+                if(mouse_b&1)
+                {
+                    choisi=1 ;
+                    lejoueur.setCouleur("bleu");
+                    stretch_blit(blue, logo, 0,0, blue->w, blue->h, 0,0,logo->w, logo->h);
+                    lejoueur.setImagePion(logo);
+                    lejoueur.setPosX(24);
+                    lejoueur.setPosY(6);
+                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                }
+            }
+            if(mouse_y>415 && mouse_y<585 && mouse_x>325 && mouse_x < 475)
+            {
+                masked_blit(violet, buffer, 0, 0, 325, 412, SCREEN_W, SCREEN_H);
+                if(mouse_b&1)
+                {
+                    choisi=1 ;
+                    lejoueur.setCouleur("violet");
+                    stretch_blit(violet, logo, 0,0, violet->w, violet->h, 0,0,logo->w, logo->h);
+                    lejoueur.setImagePion(logo);
+                    lejoueur.setPosX(19);
+                    lejoueur.setPosY(24);
+                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                }
+            }
+            if(mouse_y>415 && mouse_y<585 && mouse_x>525 && mouse_x < 675)
+            {
+                masked_blit(green, buffer, 0, 0, 525, 412, SCREEN_W, SCREEN_H);
+                if(mouse_b&1)
+                {
+                    choisi=1 ;
+                    lejoueur.setCouleur("vert");
+                    stretch_blit(green, logo, 0,0, green->w, green->h, 0,0,logo->w, logo->h);
+                    lejoueur.setImagePion(logo);
+                    lejoueur.setPosX(1);
+                    lejoueur.setPosY(17);
+                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                }
+            }
+            if(mouse_y>415 && mouse_y<585 && mouse_x>725 && mouse_x < 875)
+            {
+                masked_blit(white, buffer, 0, 0, 725, 412, SCREEN_W, SCREEN_H);
+                if(mouse_b&1)
+                {
+                    choisi=1 ;
+                    lejoueur.setCouleur("blanc");
+                    stretch_blit(white, logo, 0,0, white->w, white->h, 0,0,logo->w, logo->h);
+                    lejoueur.setImagePion(logo);
+                    lejoueur.setPosX(8);
+                    lejoueur.setPosY(24);
+                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                }
+            }
+
+        blit(buffer, screen, 0, 0, 0, 0, buffer->w, buffer->h);
+    }
+    rest(500);
+    destroy_bitmap(menu);
+    destroy_bitmap(red);
+    destroy_bitmap(yellow);
+    destroy_bitmap(blue);
+    destroy_bitmap(green);
+    destroy_bitmap(violet);
+    destroy_bitmap(white);
+    destroy_bitmap(buffer);
+}

@@ -11,10 +11,6 @@
 
 #define NB_CARTE 24
 
-#define HAUT 72
-#define BAS 80
-#define GAUCHE 75
-#define DROITE 77
 
 
 class Carte
@@ -44,8 +40,6 @@ class Carte
         BITMAP * m_image ;
         std::string m_type;
 };
-
-
 
 
 #endif // CARTE_H

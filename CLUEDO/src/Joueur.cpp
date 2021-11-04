@@ -6,9 +6,7 @@
 Joueur::Joueur()
 {
     m_loca='D' ;
-    m_imagePion = load_bitmap("images/pion.bmp", NULL);
-    m_posX = 1 ;
-    m_posY = 17 ;
+    m_deplacement = 0;
 }
 
 Joueur::~Joueur()
@@ -19,27 +17,80 @@ Joueur::~Joueur()
 /// GETTERS ///
 /// /////// ///
 
-std::string Joueur::getNom()const{return m_nom;}
-int Joueur::getPosX()const{return m_posX;}
-int Joueur::getPosY()const{return m_posY;}
-char Joueur::getLoca()const{return m_loca;}
-std::string Joueur::getCouleurPion()const{return m_couleurPion;}
-BITMAP* Joueur::getImagePion()const{return m_imagePion ;}
-std::map <std::string, bool> Joueur::getHypo()const{return m_hypothese;}
-std::vector<Carte> Joueur::getCartes()const{return m_cartes ;}
+std::string Joueur::getNom()const
+{
+    return m_nom;
+}
+int Joueur::getPosX()const
+{
+    return m_posX;
+}
+int Joueur::getPosY()const
+{
+    return m_posY;
+}
+int Joueur::getDeplacement()const
+{
+    return m_deplacement;
+}
+char Joueur::getLoca()const
+{
+    return m_loca;
+}
+std::string Joueur::getCouleurPion()const
+{
+    return m_couleurPion;
+}
+BITMAP* Joueur::getImagePion()const
+{
+    return m_imagePion ;
+}
+std::map <std::string, bool> Joueur::getHypo()const
+{
+    return m_hypothese;
+}
+std::vector<Carte> Joueur::getCartes()const
+{
+    return m_cartes ;
+}
 
 
 /// /////// ///
 /// SETTERS ///
 /// /////// ///
 
-void Joueur::setNom(std::string nom){m_nom=nom;}
-void Joueur::setPosX(int posX){m_posX=posX;}
-void Joueur::setPosY(int posY){m_posY=posY;}
-void Joueur::setLoca(char loca){m_loca=loca;}
-void Joueur::setCouleur(std::string couleur){m_couleurPion=couleur;}
-void Joueur::setImagePion(BITMAP* logo){m_imagePion=logo;}
-void Joueur::setHypo(std::string nouvinfo){m_hypothese[nouvinfo]=true;}
+void Joueur::setNom(std::string nom)
+{
+    m_nom=nom;
+}
+void Joueur::setPosX(int posX)
+{
+    m_posX=posX;
+}
+void Joueur::setPosY(int posY)
+{
+    m_posY=posY;
+}
+void Joueur::setDeplacement(int nb_depl)
+{
+    m_deplacement=nb_depl;
+}
+void Joueur::setLoca(char loca)
+{
+    m_loca=loca;
+}
+void Joueur::setCouleur(std::string couleur)
+{
+    m_couleurPion=couleur;
+}
+void Joueur::setImagePion(BITMAP* logo)
+{
+    m_imagePion=logo;
+}
+void Joueur::setHypo(std::string nouvinfo)
+{
+    m_hypothese[nouvinfo]=true;
+}
 
 
 
@@ -335,7 +386,7 @@ void Joueur::hypoDisplay(BITMAP* page) const
     int i=0;
     for(const auto& it : getHypo())
     {
-        textprintf_ex(page, font, 20, (10+25*i), makecol(0,0,0), -1, "%s", &it.first.c_str());
+        textprintf_ex(page, font, 20, (10+25*i), makecol(0,0,0), -1, "%s", it.first.c_str());
         if(it.second==true)
             rectfill(page, 370, (5+25*i), 385, (20+25*i), makecol(0,0,0));
         else rect(page, 370, (5+25*i), 385, (20+25*i), makecol(0,0,0));
@@ -351,13 +402,12 @@ void Joueur::hypoDisplay(BITMAP* page) const
 void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector <char>> &matrice)
 {
     int nb_depl, locaX, locaY;
-    char touche='a';
     char pos;
 
     ///Lancement de dé
-    nb_depl=(rand()%(6))+1;
+    nb_depl=getDeplacement();
 
-    while(nb_depl>0)
+    while(nb_depl==getDeplacement())
     {
         ///Effacer la page precedante
         clear_bitmap(page);
@@ -379,6 +429,7 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
                     locaY--;
                 pos = matrice[locaY][locaX];
 
+                std::cout << pos << std::endl;
                 ///La case suivante est dans la salle
                 if(m_posY-1 > 0 && pos=='0')
                 {
@@ -404,9 +455,9 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
                 if(locaY+1<=25)
                     locaY++;
                 pos = matrice[locaY][locaX];
-
+                std::cout << pos << std::endl;
                 ///La case suivante est dans la salle
-                if(m_posY+1 <26 && pos=='0')
+                if(m_posY+1 < 26 && pos=='0')
                 {
                     m_posY++;
                     m_loca=pos;
@@ -429,6 +480,7 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
                 if(locaX-1>=0)
                     locaX--;
                 pos = matrice[locaY][locaX];
+                std::cout << pos << std::endl;
 
                 ///La case suivante est dans la salle
                 if(m_posX-1 > 0 && pos=='0')
@@ -454,6 +506,7 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
                 if(locaX+1<=25)
                     locaX++;
                 pos = matrice[locaY][locaX];
+                std::cout << pos << std::endl;
 
                 ///La case suivante est dans la sallecc
                 if(m_posX+1 < 26 && pos=='0')
@@ -471,10 +524,10 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
                 ///La case suivante est un mur (1 ou 8 pour mur de salle)
                 else
                     textprintf_ex(page, font, 700, 100, makecol(255,255, 255), -1, "Deplacement impossible");
-                break;
+
             }
 
-
+            break;
         ///Le joueur est dans un couloir
         case '8':
             ///initialiation de la localistion actuelle
@@ -698,7 +751,7 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
                 else
                     textprintf_ex(page, font, 700, 100, makecol(255,255, 255), -1, "Deplacement impossible");
             }
-
+            break;
         }
         ///Affichage du plateau
         blit(plateau, page, 0,0,0,0, SCREEN_W, SCREEN_H);
@@ -709,6 +762,7 @@ void Joueur::deplacement(BITMAP* plateau, BITMAP* page, std::vector<std::vector 
         ///Actualisation de l'écran
         blit(page, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
 
-        rest(150);
+        rest(100);
     }
+    setDeplacement(nb_depl);
 }

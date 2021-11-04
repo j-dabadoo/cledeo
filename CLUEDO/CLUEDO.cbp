@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="header.h" />
+		<Unit filename="include/Carte.h" />
+		<Unit filename="include/Joueur.h" />
+		<Unit filename="initialisations.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menus.cpp" />
+		<Unit filename="src/Carte.cpp" />
+		<Unit filename="src/Joueur.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

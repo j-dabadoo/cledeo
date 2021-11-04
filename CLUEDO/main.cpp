@@ -1,7 +1,5 @@
 #include "header.h"
 
-
-
 int main()
 {
     std::vector <Carte> cartes ; ///non mélangées
@@ -17,7 +15,6 @@ int main()
 
     BITMAP* buffer = create_bitmap(1200, 600); ///Buffer
     BITMAP* plateau = load_bitmap("images/plateau.bmp", NULL); ///Chargement du plateau de jeu
-
 
 
 
