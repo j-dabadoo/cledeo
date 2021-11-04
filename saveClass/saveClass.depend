@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1635877009 source:c:\users\alexl\desktop\saveclass\main.cpp
+	<Perso.h>
+
+1635705350 c:\users\alexl\desktop\saveclass\include\perso.h
+	<iostream>
+	<fstream>
+	<vector>
+
+1635706568 source:c:\users\alexl\desktop\saveclass\src\perso.cpp
+	"Perso.h"
+
