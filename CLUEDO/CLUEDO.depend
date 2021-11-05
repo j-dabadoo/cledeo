@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1636042809 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\initialisations.cpp
+	"header.h"
+
+1636054489 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636054517 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\include\joueur.h
+	"Carte.h"
+
+1636042809 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636049827 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\main.cpp
+	"header.h"
+
+1636056785 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\menus.cpp
+	"header.h"
+
+1636042809 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636054455 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636114900 source:c:\users\alexl\desktop\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636114900 c:\users\alexl\desktop\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636114900 c:\users\alexl\desktop\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636114900 c:\users\alexl\desktop\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636114900 source:c:\users\alexl\desktop\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636114900 source:c:\users\alexl\desktop\cledeo-main\cluedo\menus.cpp
+	"header.h"
+
+1636114900 source:c:\users\alexl\desktop\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636114900 source:c:\users\alexl\desktop\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636116433 source:c:\users\alexl\desktop\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
