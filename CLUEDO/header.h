@@ -25,6 +25,9 @@ void launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, std::vec
 ///3e menu : choix du nombre de joueurs (dans le cas ou on lance une nouvelle partie)
 int choix_nbj();
 
+///4e menu : choix du nom d'un joueur
+std::string saisie1joueur();
+
 ///4e menu : choix de la couleur du pion du joueur
 void choix_couleur(Joueur& lejoueur);
 

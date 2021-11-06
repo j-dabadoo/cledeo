@@ -62,3 +62,36 @@
 1636128527 source:c:\users\alexl\desktop\cledeo-main\cluedo\divers.cpp
 	"header.h"
 
+1636224572 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
+1636221777 c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636196160 c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636196160 c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636237735 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\menus.cpp
+	"header.h"
+

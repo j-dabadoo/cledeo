@@ -43,6 +43,8 @@ void actualisation(BITMAP* buffer, BITMAP* plateau, std::vector<Joueur>& joueurs
     for(const auto& joueur:joueurs)
         draw_sprite(buffer, joueur.getImagePion(), joueur.getPosX()*23.25, joueur.getPosY()*23.5) ;
 
+    //al_draw_text(font,makecol(255,255,255), 700,50, 0, "%s", joueurs[tour].getNom());
+    textprintf_ex(buffer, font, 700, 50, makecol(255,255,255), -1, "%s", joueurs[tour].getNom().c_str());
     ///Affichage des cartes du joueurs
     joueurs[tour].cardDisplay(buffer);
 

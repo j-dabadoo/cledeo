@@ -120,6 +120,7 @@ void launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, std::vec
 
             for(int i=0; i<nb_joueurs; i++)
             {
+                joueurs[i].setNom(saisie1joueur()) ;
                 choix_couleur(joueurs[i]);
             }
 
@@ -202,6 +203,7 @@ void choix_couleur(Joueur& lejoueur)
     {
         clear_bitmap(buffer);
         blit(menu, buffer, 0, 0, 0, 0, menu->w, menu->h);
+        textprintf_ex(buffer, font, 580, 110, makecol(77, 3, 18), -1, "%s", lejoueur.getNom().c_str());
             if(mouse_y>215 && mouse_y<385 && mouse_x>225 && mouse_x < 375)
             {
                 masked_blit(red, buffer, 0, 0, 225, 213, SCREEN_W, SCREEN_H);
@@ -213,7 +215,7 @@ void choix_couleur(Joueur& lejoueur)
                     lejoueur.setImagePion(logo);
                     lejoueur.setPosX(10);
                     lejoueur.setPosY(0);
-                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                    textprintf_ex(buffer, font, 500, 200, makecol(77, 3, 18), -1, "Tres bon choix...." );
                 }
             }
             if(mouse_y>215 && mouse_y<385 && mouse_x>525 && mouse_x < 675)
@@ -227,7 +229,7 @@ void choix_couleur(Joueur& lejoueur)
                     lejoueur.setImagePion(logo);
                     lejoueur.setPosX(15);
                     lejoueur.setPosY(0);
-                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                    textprintf_ex(buffer, font, 500, 200, makecol(77, 3, 18), -1, "Tres bon choix...." );
                }
             }
             if(mouse_y>215 && mouse_y<385 && mouse_x>825 && mouse_x < 975)
@@ -241,7 +243,7 @@ void choix_couleur(Joueur& lejoueur)
                     lejoueur.setImagePion(logo);
                     lejoueur.setPosX(24);
                     lejoueur.setPosY(6);
-                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                    textprintf_ex(buffer, font, 500, 200, makecol(77, 3, 18), -1, "Tres bon choix...." );
                 }
             }
             if(mouse_y>415 && mouse_y<585 && mouse_x>325 && mouse_x < 475)
@@ -255,7 +257,7 @@ void choix_couleur(Joueur& lejoueur)
                     lejoueur.setImagePion(logo);
                     lejoueur.setPosX(24);
                     lejoueur.setPosY(19);
-                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                    textprintf_ex(buffer, font, 500, 200, makecol(77, 3, 18), -1, "Tres bon choix...." );
                 }
             }
             if(mouse_y>415 && mouse_y<585 && mouse_x>525 && mouse_x < 675)
@@ -269,7 +271,7 @@ void choix_couleur(Joueur& lejoueur)
                     lejoueur.setImagePion(logo);
                     lejoueur.setPosX(1);
                     lejoueur.setPosY(17);
-                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                    textprintf_ex(buffer, font, 500, 200, makecol(77, 3, 18), -1, "Tres bon choix...." );
                 }
             }
             if(mouse_y>415 && mouse_y<585 && mouse_x>725 && mouse_x < 875)
@@ -283,7 +285,7 @@ void choix_couleur(Joueur& lejoueur)
                     lejoueur.setImagePion(logo);
                     lejoueur.setPosX(8);
                     lejoueur.setPosY(24);
-                    textprintf_ex(buffer, font, 500, 150, makecol(77, 3, 18), -1, "Tres bon choix...." );
+                    textprintf_ex(buffer, font, 500, 200, makecol(77, 3, 18), -1, "Tres bon choix...." );
                 }
             }
 
@@ -298,4 +300,59 @@ void choix_couleur(Joueur& lejoueur)
     destroy_bitmap(violet);
     destroy_bitmap(white);
     destroy_bitmap(buffer);
+}
+
+std::string saisie1joueur()
+{
+    int  i=0, x=580, y=110 ;
+    char tempo[50]=" ";
+    std::string nom;
+
+    BITMAP* buffer = create_bitmap(SCREEN_W,SCREEN_H);
+    BITMAP* fond =   load_bitmap("images/choix_nom.bmp", NULL);
+
+    blit(fond, buffer, 0,0,0,0, SCREEN_W, SCREEN_H);
+    textprintf_ex(buffer, font, 480, 90, makecol(77, 3, 18), -1, "Appuie sur ESPACE pour valider") ;
+    blit(buffer, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
+
+    ///Tant qu'on appuie pas sur Entrée on est dans la saisie du nom du joueur
+    while(!key[KEY_ENTER])
+    {
+        clear_bitmap(buffer);
+        blit(fond, buffer, 0,0,0,0, SCREEN_W, SCREEN_H);
+        textprintf_ex(buffer, font, 480, 90, makecol(77, 3, 18), -1, "Appuie sur ESPACE pour valider") ;
+
+        ///On range chaque lettre
+        tempo[i] = readkey() ;
+
+        ///Si on fait Entrée, c'est la fin du mot, on remplace donc par \0
+        if(key[KEY_ENTER])
+            tempo[i]='\0' ;
+
+        ///Si on appuie sur supprimer, on supprime la dernière lettre
+        if(key[KEY_BACKSPACE])
+        {
+            tempo[i]=' ';
+            i-- ;
+            tempo[i]=' ';
+            textprintf_ex(buffer, font, x, y, makecol(77, 3, 18), -1, "%s", tempo) ;
+        }
+
+        ///Si on appuie pas sur supprimer on affiche le texte normalement
+        else
+        {
+            textprintf_ex(buffer, font, x, y, makecol(77, 3, 18), -1, "%s", tempo) ;
+            i++ ;
+        }
+
+        blit(buffer, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
+    }
+
+    ///Voici le nom final du joueur
+    nom=tempo;
+
+    destroy_bitmap(fond);
+    destroy_bitmap(buffer);
+
+    return nom ;
 }
