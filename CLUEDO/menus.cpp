@@ -123,7 +123,7 @@ void launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, std::vec
         {
             joueurs[i].setNom(saisie1joueur()) ;
             choix_couleur(joueurs[i]);
-            joueurs[i].setDeplacement(lancerDe());
+            //joueurs[i].setDeplacement(lancerDe());
         }
 
         break ;

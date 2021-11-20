@@ -41,11 +41,11 @@ int lancerDe() ;
 
 void actualisation(BITMAP* buffer, BITMAP* plateau, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs);
 
-int plateaudebase(BITMAP* page);
-void affichehypo(BITMAP* page, std::vector<Joueur>& joueurs, int& tour);
+void affichehypo(BITMAP* buffer, std::vector<Joueur>& joueurs, int& tour);
 std::string trouvlieu(Joueur lejoueur);
 void actionhypo(int choixint, std::vector<Joueur>& joueurs, int& tour);
 void incluhypo(std::vector<Joueur>& joueurs, int& tour, Hypothese hypoaajt);
+void actionsBoutons(std::vector <Joueur>& joueurs, int& tour, int& nb_joueurs, BITMAP* buffer);
 
 void writeAll(std::vector <Joueur>& joueurs, int& tour);
 void readAll(std::vector <Joueur>& joueurs, int& nb_joueurs, int& tour);

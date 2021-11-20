@@ -36,7 +36,7 @@ class Carte
         void setImage(BITMAP* image);
         void setType(std::string type);
 
-        void display(BITMAP* page)const;
+        void display(BITMAP* buffer)const;
 
     private:
         int m_id ;

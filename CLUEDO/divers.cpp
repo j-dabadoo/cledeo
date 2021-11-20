@@ -22,7 +22,79 @@ void tourParTour(int& tour, int& nb_joueurs)
 
 int lancerDe()
 {
-    return rand()%(11)+2; ///Génération d'un nombre aléatoire entre 2 et 12
+    BITMAP* detournant  = load_bitmap("images/de.bmp", NULL);
+    BITMAP* un          = load_bitmap("images/UN.bmp", NULL);
+    BITMAP* deux        = load_bitmap("images/DEUX.bmp", NULL);
+    BITMAP* trois       = load_bitmap("images/TROIS.bmp", NULL);
+    BITMAP* quatre      = load_bitmap("images/QUATRE.bmp", NULL);
+    BITMAP* cinq        = load_bitmap("images/CINQ.bmp", NULL);
+    BITMAP* six         = load_bitmap("images/SIX.bmp", NULL);
+    BITMAP* buffer      = create_bitmap(1200, 600);
+    BITMAP* buffer1     = create_bitmap(1200, 600);
+
+    int resultat1, resultat2;
+
+
+    blit(detournant, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
+
+    for(int i=0; i<10; i++)
+    {
+        clear_bitmap(buffer1);
+        rotate_sprite(buffer1, detournant,0, 0, ftofix(20*i));
+        blit(buffer1, screen, 0, 0,0, 0, SCREEN_W, SCREEN_H );
+        blit(buffer1, screen, 0, 0,0, 300, SCREEN_W, SCREEN_H );
+
+        rest(70);
+    }
+
+    resultat1 = rand()%(7)+1 ;
+    resultat2 = rand()%(7)+1 ;
+
+    while(not(key[KEY_SPACE]))
+    {
+        //premier de
+        if(resultat1==1)
+            masked_blit(un,     buffer,  0, 0, 400, 0, SCREEN_W, SCREEN_H );
+        if(resultat1==2)
+            masked_blit(deux,   buffer,  0, 0, 400, 0, SCREEN_W, SCREEN_H );
+        if(resultat1==3)
+            masked_blit(trois,  buffer,  0, 0, 400, 0, SCREEN_W, SCREEN_H );
+        if(resultat1==4)
+            masked_blit(quatre, buffer,  0, 0, 400, 0, SCREEN_W, SCREEN_H );
+        if(resultat1==5)
+            masked_blit(cinq,   buffer,  0, 0, 400, 0, SCREEN_W, SCREEN_H );
+        if(resultat1==6)
+            masked_blit(six,    buffer,  0, 0, 400, 0, SCREEN_W, SCREEN_H );
+
+        //deuxieme dé
+        if(resultat2==1)
+            masked_blit(un,     buffer,  0, 0, 400, 400, SCREEN_W, SCREEN_H );
+        if(resultat2==2)
+            masked_blit(deux,   buffer,  0, 0, 400, 400, SCREEN_W, SCREEN_H );
+        if(resultat2==3)
+            masked_blit(trois,  buffer,  0, 0, 400, 400, SCREEN_W, SCREEN_H );
+        if(resultat2==4)
+            masked_blit(quatre, buffer,  0, 0, 400, 400, SCREEN_W, SCREEN_H );
+        if(resultat2==5)
+            masked_blit(cinq,   buffer,  0, 0, 400, 400, SCREEN_W, SCREEN_H );
+        if(resultat2==6)
+            masked_blit(six,    buffer,  0, 0, 400, 400, SCREEN_W, SCREEN_H );
+
+        blit(buffer, screen, 0, 0,0, 0, SCREEN_W, SCREEN_H );
+        rest(100);
+    }
+
+
+    destroy_bitmap(detournant) ;
+    destroy_bitmap(un) ;
+    destroy_bitmap(deux) ;
+    destroy_bitmap(trois) ;
+    destroy_bitmap(quatre) ;
+    destroy_bitmap(cinq) ;
+    destroy_bitmap(six) ;
+
+
+    return resultat1 + resultat2 ;
 }
 
 
@@ -34,32 +106,38 @@ int lancerDe()
 
 void actualisation(BITMAP* buffer, BITMAP* plateau, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs)
 {
-    int choixint = 0 ;
-    Hypothese hypothese ;
+    ///Affichage du plateau et des boutons
+    blit(plateau, buffer, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
 
-    choixint=plateaudebase(buffer);
+    ///quitter le jeu
+    rectfill(buffer,620,125,820,175,makecol(127,127,127));
+
+    ///bouton hypothese
+    rectfill(buffer,620,225,820,275,makecol(208,82,41));
+    if(mouse_x>=620 && mouse_x<=820 && mouse_y>=225 && mouse_y<=275)
+        rect(buffer, 617, 222, 823, 278, makecol(208,82,41));
+    else
+        rect(buffer, 617, 222, 823, 278, makecol(0,0,0));
+
+    ///zone de dé
+    rectfill(buffer,900,75,1150,325,makecol(59,162,71));
+
+
 
     //blit(plateau, buffer, 0,0,0,0, SCREEN_W, SCREEN_H);
     //al_draw_text(font,makecol(255,255,255), 700,50, 0, "%s", joueurs[tour].getNom());
 
-    ///Si le joueur choisit d'afficher les hypothèses
-    if(choixint == 1)
-        hypothese.actionhypo(choixint, joueurs, tour, nb_joueurs, buffer);
 
-    ///Affichage du plateau de jeu
-    else
-    {
-        ///Affichage des pions
-        for(const auto& joueur:joueurs)
-            draw_sprite(buffer, joueur.getImagePion(), joueur.getPosX()*23.25, joueur.getPosY()*23.5) ;
+    ///Affichage des pions
+    for(const auto& joueur:joueurs)
+        draw_sprite(buffer, joueur.getImagePion(), joueur.getPosX()*23.25, joueur.getPosY()*23.5) ;
 
-        ///Affichage du nom et du nombre de coups restant à jouer
-        textprintf_ex(buffer, font, 700, 50, makecol(255,255,255), -1, "%s", joueurs[tour].getNom().c_str());
-        textprintf_ex(buffer, font, 600, 100, makecol(255, 255, 255), -1, "Il vous reste %d deplacements", joueurs[tour].getDeplacement());
+    ///Affichage du nom et du nombre de coups restant à jouer
+    textprintf_ex(buffer, font, 700, 50, makecol(255,255,255), -1, "%s", joueurs[tour].getNom().c_str());
+    textprintf_ex(buffer, font, 600, 100, makecol(255, 255, 255), -1, "Il vous reste %d deplacements", joueurs[tour].getDeplacement());
 
-        ///Affichage des cartes du joueurs
-        joueurs[tour].cardDisplay(buffer);
-    }
+    ///Affichage des cartes du joueurs
+    joueurs[tour].cardDisplay(buffer);
 
 
     ///Affichage du buffer à l'écran
@@ -68,45 +146,26 @@ void actualisation(BITMAP* buffer, BITMAP* plateau, std::vector<Joueur>& joueurs
 
 
 
-/// //////////////////////////// ///
-/// AFFICHAGE DU PLATEAU INITIAL ///
-/// //////////////////////////// ///
+/// /////////////////// ///
+/// ACTIONS DES BOUTONS ///
+/// /////////////////// ///
 
-int plateaudebase(BITMAP* page)
+void actionsBoutons(std::vector <Joueur>& joueurs, int& tour, int& nb_joueurs, BITMAP* buffer)
 {
-    BITMAP* plateau;
+    Hypothese hypothese ;
 
-    plateau=load_bitmap("images/plateau.bmp", NULL);
-    blit(plateau, page, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
-
-    ///quitter le jeu
-    rectfill(page,620,125,820,175,makecol(127,127,127));
-    ///bouton hypothese
-    rectfill(page,620,225,820,275,makecol(208,82,41));
-    ///zone de dé
-    rectfill(page,900,75,1150,325,makecol(59,162,71));
-
-
-
-    ///Bouton hypothèse
-    if(mouse_x>=620 && mouse_x<=820 && mouse_y>=225 && mouse_y<=275)
-        rect(page, 617, 222, 823, 278, makecol(208,82,41));
-
-    else
-        rect(page, 617, 222, 823, 278, makecol(0,0,0));
-
+    ///Appuie sur un bouton
     if(mouse_b &1)
     {
-        if(mouse_x>=620 && mouse_x<=820 && mouse_y>=225 && mouse_y<=275)
-            return 1;
+        ///Bouton hypothèse
+        if(mouse_x >= 620 and mouse_x <= 820 and mouse_y >= 225 and mouse_y <= 275)
+            hypothese.actionhypo(joueurs, tour, nb_joueurs, buffer);
+
+        ///Lancer de dé
+        if(mouse_x >= 900 and mouse_x <= 1150 and mouse_y >= 75 and mouse_y <= 325)
+            joueurs[tour].setDeplacement(lancerDe());
     }
-
-    return 0 ;
 }
-
-
-
-
 
 
 

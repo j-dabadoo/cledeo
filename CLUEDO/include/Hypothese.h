@@ -23,8 +23,8 @@ class Hypothese
 
         ///autres
         void displayHypo();
-        void affichehypo(BITMAP* page, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs);
-        void actionhypo(int choixint, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs, BITMAP* buffer);
+        void affichehypo(BITMAP* buffer, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs);
+        void actionhypo(std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs, BITMAP* buffer);
         std::string trouvlieu(Joueur lejoueur);
         void incluhypo(std::vector<Joueur>& joueurs, int& tour, Hypothese hypoaajt);
         void verifhypochezlejoueuraccuse(std::vector<Joueur>& joueurs, int accuse, std::string armeverif, std::string persoverif, std::string lieuverif, int tour);

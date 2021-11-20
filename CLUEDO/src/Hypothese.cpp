@@ -67,9 +67,9 @@ void Hypothese::displayHypo()
 /// AFFICHAGE DE L'ÉCRAN D'YHOPTHÈSES ///
 /// ///////////////////////////////// ///
 
-void Hypothese::affichehypo(BITMAP* page, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs)
+void Hypothese::affichehypo(BITMAP* buffer, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs)
 {
-    clear_bitmap(page);
+    clear_bitmap(buffer);
 
     ///BITMAP
     //personnages
@@ -112,46 +112,46 @@ void Hypothese::affichehypo(BITMAP* page, std::vector<Joueur>& joueurs, int& tou
     tirebouchon=load_bitmap("images/tirebouchon.bmp", NULL);
 
     ///cadre de jade
-    rectfill(page,0,0,400,600,makecol(239,228,176));
+    rectfill(buffer,0,0,400,600,makecol(239,228,176));
     for(int i=0; i<25; i++)
     {
-        hline(page, 0, (25+ i*25), 400, makecol(0, 0, 0));
+        hline(buffer, 0, (25+ i*25), 400, makecol(0, 0, 0));
     }
-    vline(page, 350, 0, 600, makecol(0, 0, 0));
-    joueurs[tour].hypoDisplay(page);
+    vline(buffer, 350, 0, 600, makecol(0, 0, 0));
+    joueurs[tour].hypoDisplay(buffer);
 
     ///affichage des personnages
-    textprintf_ex(page,font, 500, 75,makecol(239, 228, 176), -1, "personnages: ");
-    blit(barbenoire, page,0,0, 402, 85, SCREEN_W, SCREEN_H);
-    blit(billturner, page,0,0, 490, 85, SCREEN_W, SCREEN_H);
-    blit(calypso, page, 0,0,578, 85, SCREEN_W, SCREEN_H);
-    blit(davyjones, page,0,0, 666, 85, SCREEN_W, SCREEN_H);
-    blit(jacksparrow, page,0,0, 754, 85,SCREEN_W, SCREEN_H);
-    blit(jamesnorrington, page,0,0, 842, 85, SCREEN_W, SCREEN_H);
-    blit(swann, page,0,0, 930, 85, SCREEN_W, SCREEN_H);
-    blit(barbossa, page, 0,0,1018, 85, SCREEN_W, SCREEN_H);
-    blit(willturner, page,0,0, 1106, 85, SCREEN_W, SCREEN_H);
+    textprintf_ex(buffer,font, 500, 75,makecol(239, 228, 176), -1, "personnages: ");
+    blit(barbenoire, buffer,0,0, 402, 85, SCREEN_W, SCREEN_H);
+    blit(billturner, buffer,0,0, 490, 85, SCREEN_W, SCREEN_H);
+    blit(calypso, buffer, 0,0,578, 85, SCREEN_W, SCREEN_H);
+    blit(davyjones, buffer,0,0, 666, 85, SCREEN_W, SCREEN_H);
+    blit(jacksparrow, buffer,0,0, 754, 85,SCREEN_W, SCREEN_H);
+    blit(jamesnorrington, buffer,0,0, 842, 85, SCREEN_W, SCREEN_H);
+    blit(swann, buffer,0,0, 930, 85, SCREEN_W, SCREEN_H);
+    blit(barbossa, buffer, 0,0,1018, 85, SCREEN_W, SCREEN_H);
+    blit(willturner, buffer,0,0, 1106, 85, SCREEN_W, SCREEN_H);
 
-    textprintf_ex(page,font, 500, 275,makecol(239, 228, 176), -1, "armes: ");
-    blit(canon, page,0,0, 402, 285, SCREEN_W, SCREEN_H);
-    blit(poudre, page,0,0, 535, 285, SCREEN_W, SCREEN_H);
-    blit(tirebouchon, page, 0,0,668, 285, SCREEN_W, SCREEN_H);
-    blit(cle, page,0,0, 801, 285, SCREEN_W, SCREEN_H);
-    blit(sabre, page,0,0, 934, 285,SCREEN_W, SCREEN_H);
-    blit(pistolet, page,0,0, 1067, 285, SCREEN_W, SCREEN_H);
+    textprintf_ex(buffer,font, 500, 275,makecol(239, 228, 176), -1, "armes: ");
+    blit(canon, buffer,0,0, 402, 285, SCREEN_W, SCREEN_H);
+    blit(poudre, buffer,0,0, 535, 285, SCREEN_W, SCREEN_H);
+    blit(tirebouchon, buffer, 0,0,668, 285, SCREEN_W, SCREEN_H);
+    blit(cle, buffer,0,0, 801, 285, SCREEN_W, SCREEN_H);
+    blit(sabre, buffer,0,0, 934, 285,SCREEN_W, SCREEN_H);
+    blit(pistolet, buffer,0,0, 1067, 285, SCREEN_W, SCREEN_H);
 
 
 
-    textprintf_ex(page,font, 500, 435,makecol(239, 228, 176), -1, "joueurs: ");
+    textprintf_ex(buffer,font, 500, 435,makecol(239, 228, 176), -1, "joueurs: ");
 
     int i=0;
     for(const auto& elem: joueurs)
     {
-        draw_sprite(page, elem.getImagePion(), 450+i, 450) ;
+        draw_sprite(buffer, elem.getImagePion(), 450+i, 450) ;
         i=i+100;
     }
 
-    blit(page, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
+    blit(buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
 }
 
 
@@ -162,7 +162,7 @@ void Hypothese::affichehypo(BITMAP* page, std::vector<Joueur>& joueurs, int& tou
 /// PERMET DE RENTRER DANS LE MENU HYPOTHÈSE ET D'EN FORMULER ///
 /// ///////////////////////////////////////////////////////// ///
 
-void Hypothese::actionhypo(int choixint, std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs, BITMAP* buffer)
+void Hypothese::actionhypo(std::vector<Joueur>& joueurs, int& tour, int& nb_joueurs, BITMAP* buffer)
 {
     int valiarme=0, valiperso=0, valilieu=0, valijou=0, joueurchoisi=0 ;
 

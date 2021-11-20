@@ -37,10 +37,15 @@ int main()
             tourParTour(tour, nb_joueurs);
 
             ///Quand on passe à l'autre joueur on lui relance ses dés
-            joueurs[tour].setDeplacement(lancerDe());
+            //joueurs[tour].setDeplacement(lancerDe());
         }
-       ///Actualisation de l'affichage
-       actualisation(buffer, plateau, joueurs, tour, nb_joueurs);
+
+        actionsBoutons(joueurs, tour, nb_joueurs, buffer) ;
+
+        ///Actualisation de l'affichage
+        actualisation(buffer, plateau, joueurs, tour, nb_joueurs);
+
+        //std::cout<<mouse_x<<" : "<<mouse_y<<std::endl;
     }
 
 
