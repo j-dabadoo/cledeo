@@ -1,0 +1,188 @@
+2
+0
+a
+15
+0
+3
+D
+0
+Jaune
+24
+ Baie des Naufrages : F
+ Barbe Noire : F
+ Barbossa : F
+ Bill Turner : F
+ Black Pearl : T
+ Calypso : T
+ Canon : T
+ Cle : F
+ Davy Jones : T
+ Elizabeth Swann : T
+ HMS Intrepide : F
+ Hollandais Volant : T
+ Ile au rhum : F
+ Ile de la Muerta : T
+ Ile des 4 vents : T
+ Jack Sparrow : F
+ James Norrington : F
+ Pistolet : F
+ Port Royal : F
+ Poudre a canon : F
+ Sabre : F
+ Tire bouchon : T
+ Triangle des Bermudes : T
+ Will Turner : T
+11
+19
+0
+0
+ Hollandais Volant ;
+lieu
+4
+0
+0
+ Tire bouchon ;
+arme
+22
+0
+0
+ Triangle des Bermudes ;
+lieu
+23
+0
+0
+ Black Pearl ;
+lieu
+11
+0
+0
+ Davy Jones ;
+perso
+10
+0
+0
+ Elizabeth Swann ;
+perso
+17
+0
+0
+ Ile de la Muerta ;
+lieu
+20
+0
+0
+ Ile des 4 vents ;
+lieu
+6
+0
+0
+ Will Turner ;
+perso
+5
+0
+0
+ Canon ;
+arme
+12
+0
+0
+ Calypso ;
+perso
+b
+24
+6
+0
+D
+0
+Bleu
+24
+ Baie des Naufrages : T
+ Barbe Noire : T
+ Barbossa : T
+ Bill Turner : T
+ Black Pearl : F
+ Calypso : F
+ Canon : F
+ Cle : T
+ Davy Jones : F
+ Elizabeth Swann : F
+ HMS Intrepide : T
+ Hollandais Volant : F
+ Ile au rhum : T
+ Ile de la Muerta : F
+ Ile des 4 vents : F
+ Jack Sparrow : T
+ James Norrington : F
+ Pistolet : T
+ Port Royal : F
+ Poudre a canon : T
+ Sabre : F
+ Tire bouchon : F
+ Triangle des Bermudes : F
+ Will Turner : F
+10
+14
+0
+0
+ Barbe Noire ;
+perso
+9
+0
+0
+ Barbossa ;
+perso
+7
+0
+0
+ Bill Turner ;
+perso
+3
+0
+0
+ Cle ;
+arme
+21
+0
+0
+ HMS Intrepide ;
+lieu
+15
+0
+0
+ Baie des Naufrages ;
+lieu
+8
+0
+0
+ Jack Sparrow ;
+perso
+1
+0
+0
+ Pistolet ;
+arme
+18
+0
+0
+ Ile au rhum ;
+lieu
+2
+0
+0
+ Poudre a canon ;
+arme
+0
+0
+0
+Sabre ;
+arme
+13
+0
+0
+James Norrington ;
+perso
+16
+0
+0
+Port Royal ;
+lieu
