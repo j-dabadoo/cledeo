@@ -1,9 +1,0 @@
-a 0
-alex 0
-ariane 0
-b 0
-cha 0
-charlotte 4
-jade 3
-michel 10
-thomas -2
