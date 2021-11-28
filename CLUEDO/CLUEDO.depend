@@ -1,0 +1,372 @@
+# depslib dependency file v1.0
+1636042809 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\initialisations.cpp
+	"header.h"
+
+1636054489 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636054517 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\include\joueur.h
+	"Carte.h"
+
+1636042809 c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636049827 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\main.cpp
+	"header.h"
+
+1636056785 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\menus.cpp
+	"header.h"
+
+1636042809 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636054455 source:c:\users\jdeja\onedrive\documents\etudes\ece\informatique\ing2\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636127080 source:c:\users\alexl\desktop\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636121832 c:\users\alexl\desktop\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636121446 c:\users\alexl\desktop\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636117710 c:\users\alexl\desktop\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636127551 source:c:\users\alexl\desktop\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636128069 source:c:\users\alexl\desktop\cledeo-main\cluedo\menus.cpp
+	"header.h"
+
+1636117844 source:c:\users\alexl\desktop\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636127592 source:c:\users\alexl\desktop\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636128527 source:c:\users\alexl\desktop\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
+1636224572 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
+1636221777 c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+
+1636196160 c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636196160 c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636196160 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636237735 source:c:\users\jdeja\downloads\cledeo-main(1)\cledeo-main\cluedo\menus.cpp
+	"header.h"
+
+1636566436 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
+1636564150 c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+	"Hypothese.h"
+
+1636536132 c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636536132 c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636566207 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636407967 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636536314 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\menus.cpp
+	"header.h"
+
+1636536395 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636566207 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636564430 c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\include\hypothese.h
+	<iostream>
+	<allegro.h>
+
+1636566436 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cluedo\src\hypothese.cpp
+	"Hypothese.h"
+
+1636566436 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
+1636564150 c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+	"Hypothese.h"
+
+1636536132 c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636536132 c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636564430 c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\include\hypothese.h
+	<iostream>
+	<allegro.h>
+
+1636566207 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636407967 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636536314 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\menus.cpp
+	"header.h"
+
+1636536395 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636566436 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\src\hypothese.cpp
+	"Hypothese.h"
+
+1636566207 source:c:\users\aubru\downloads\cledeo-main\cledeo-main\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1636980979 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\divers.cpp
+	"header.h"
+
+1636927247 c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+	"Hypothese.h"
+
+1636966012 c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\include\joueur.h
+	"Carte.h"
+
+1636927249 c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\include\carte.h
+	<iostream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+
+1636966301 c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\include\hypothese.h
+	"Joueur.h"
+
+1636927247 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\initialisations.cpp
+	"header.h"
+
+1636966170 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\main.cpp
+	"header.h"
+
+1636966501 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\menus.cpp
+	"header.h"
+
+1636927249 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\src\carte.cpp
+	"Carte.h"
+
+1636974190 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\src\hypothese.cpp
+	"Hypothese.h"
+
+1636927249 source:c:\users\alexl\desktop\alexregardemoica\cledeo-main\cledeo-main\cledeo-main\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1637914429 source:c:\users\alexl\desktop\cluedodernier\cluedo\initialisations.cpp
+	"header.h"
+
+1638004095 c:\users\alexl\desktop\cluedodernier\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+	"Hypothese.h"
+
+1637876788 c:\users\alexl\desktop\cluedodernier\cluedo\include\joueur.h
+	"Carte.h"
+
+1637914022 c:\users\alexl\desktop\cluedodernier\cluedo\include\carte.h
+	<iostream>
+	<fstream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+	<math.h>
+
+1637916039 c:\users\alexl\desktop\cluedodernier\cluedo\include\hypothese.h
+	"Joueur.h"
+
+1637953598 source:c:\users\alexl\desktop\cluedodernier\cluedo\main.cpp
+	"header.h"
+
+1637966563 source:c:\users\alexl\desktop\cluedodernier\cluedo\menus.cpp
+	"header.h"
+
+1637915287 source:c:\users\alexl\desktop\cluedodernier\cluedo\src\carte.cpp
+	"Carte.h"
+
+1637967501 source:c:\users\alexl\desktop\cluedodernier\cluedo\src\hypothese.cpp
+	"Hypothese.h"
+
+1637876788 source:c:\users\alexl\desktop\cluedodernier\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1638004095 source:c:\users\alexl\desktop\cluedodernier\cluedo\divers.cpp
+	"header.h"
+
+1638030613 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\divers.cpp
+	"header.h"
+
+1638030528 c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+	"Hypothese.h"
+	"Sauvegarde.h"
+
+1637876790 c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\include\joueur.h
+	"Carte.h"
+
+1637914024 c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\include\carte.h
+	<iostream>
+	<fstream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+	<math.h>
+
+1637916040 c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\include\hypothese.h
+	"Joueur.h"
+
+1638015140 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\initialisations.cpp
+	"header.h"
+
+1638030723 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\main.cpp
+	"header.h"
+
+1638030840 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\menus.cpp
+	"header.h"
+
+1637915288 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\src\carte.cpp
+	"Carte.h"
+
+1638017352 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\src\hypothese.cpp
+	"Hypothese.h"
+
+1638016283 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1638015698 c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\include\sauvegarde.h
+	"Joueur.h"
+
+1638015493 source:c:\users\alexl\desktop\cluedodernier (2)\cluedodernier\cluedo\src\sauvegarde.cpp
+	"Sauvegarde.h"
+
+1638035748 source:c:\users\alexl\desktop\cluedo\divers.cpp
+	"header.h"
+
+1638035931 c:\users\alexl\desktop\cluedo\header.h
+	"Joueur.h"
+	"Carte.h"
+	"Hypothese.h"
+	"Sauvegarde.h"
+	"Menu.h"
+
+1638091191 c:\users\alexl\desktop\cluedo\include\joueur.h
+	"Carte.h"
+
+1637914024 c:\users\alexl\desktop\cluedo\include\carte.h
+	<iostream>
+	<fstream>
+	<vector>
+	<map>
+	<allegro.h>
+	<conio.h>
+	<time.h>
+	<math.h>
+
+1638035748 c:\users\alexl\desktop\cluedo\include\hypothese.h
+	"Joueur.h"
+
+1638039689 c:\users\alexl\desktop\cluedo\include\sauvegarde.h
+	"Hypothese.h"
+
+1638034713 source:c:\users\alexl\desktop\cluedo\initialisations.cpp
+	"header.h"
+
+1638035978 source:c:\users\alexl\desktop\cluedo\main.cpp
+	"Game.h"
+
+1638034340 source:c:\users\alexl\desktop\cluedo\menus.cpp
+	"header.h"
+
+1637915288 source:c:\users\alexl\desktop\cluedo\src\carte.cpp
+	"Carte.h"
+
+1638041878 source:c:\users\alexl\desktop\cluedo\src\hypothese.cpp
+	"Hypothese.h"
+
+1638091158 source:c:\users\alexl\desktop\cluedo\src\joueur.cpp
+	"Joueur.h"
+
+1638041891 source:c:\users\alexl\desktop\cluedo\src\sauvegarde.cpp
+	"Sauvegarde.h"
+
+1638091660 c:\users\alexl\desktop\cluedo\include\menu.h
+	"Sauvegarde.h"
+
+1638091667 source:c:\users\alexl\desktop\cluedo\src\menu.cpp
+	"Menu.h"
+
+1638047379 c:\users\alexl\desktop\cluedo\include\game.h
+	"Menu.h"
+
+1638091261 source:c:\users\alexl\desktop\cluedo\src\game.cpp
+	"Game.h"
+
