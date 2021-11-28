@@ -70,6 +70,10 @@ bool Joueur::getFin()const
 {
     return m_fin ;
 }
+bool Joueur::getLancerDe()const
+{
+    return m_lancerDe;
+}
 
 
 /// /////// ///
@@ -132,7 +136,10 @@ void Joueur::setFin(bool fin)
 {
     m_fin = fin ;
 }
-
+void Joueur::setLancerDe(bool lancer)
+{
+    m_lancerDe = lancer;
+}
 
 
 /// ///////////////////////////////////////// ///
@@ -1342,7 +1349,3 @@ void Joueur::pawnRecovery()
     stretch_blit(m_imagePion, logo, 0,0, m_imagePion->w, m_imagePion->h, 0,0,logo->w, logo->h);
     m_imagePion = logo ;
 }
-
-
-
-

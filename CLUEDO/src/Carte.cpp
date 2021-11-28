@@ -78,5 +78,3 @@ void Carte::display(BITMAP* buffer)const
             blit(getImage(), buffer, 0, 0, getPosX(), getPosY(), getImage()->w, getImage()->h);
     }
 }
-
-

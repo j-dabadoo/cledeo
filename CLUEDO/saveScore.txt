@@ -4,6 +4,6 @@ ariane 0
 b 0
 cha 0
 charlotte 4
-jade 3
+jade 0
 michel 10
 thomas -2

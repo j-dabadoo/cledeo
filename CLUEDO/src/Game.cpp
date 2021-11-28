@@ -130,6 +130,7 @@ void Game::tourParTour(int& tour, int& nb_joueurs, std::vector<Joueur>& joueurs)
     {}
 
     joueurs[tour].setDeplacement(0); //Si le joueur n'a pas effectué tous ses déplacements on lui met à 0
+    joueurs[tour].setLancerDe(false); //Le joueur pourra relancer les dés au prochain tour
 
     tour++ ; ///Incrementation du compteur tour pour passer au joueur suivant
 
@@ -373,8 +374,11 @@ void Game::actionsBoutons(std::vector <Joueur>& joueurs, std::vector <Carte>& se
         }
 
         ///Lancer de dé
-        if(mouse_x >= 900 and mouse_x <= 1150 and mouse_y >= 75 and mouse_y <= 325)
+        if(mouse_x >= 900 and mouse_x <= 1150 and mouse_y >= 75 and mouse_y <= 325 and joueurs[tour].getLancerDe() == false)
+        {
             joueurs[tour].setDeplacement(lancerDe(buffer, des, broadway));
+            joueurs[tour].setLancerDe(true); //Le joueur a lancé les dés
+        }
 
         ///affichage de la grille d'hypothèse solo
         if(mouse_x >= 620 and mouse_x <= 820 and mouse_y >= 175 and mouse_y <= 225)

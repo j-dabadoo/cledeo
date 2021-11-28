@@ -40,5 +40,3 @@ class Hypothese
 };
 
 #endif // HYPOTHESE_H
-
-

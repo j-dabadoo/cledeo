@@ -21,6 +21,7 @@ class Joueur
         std::map <std::string, bool> getHypo()const;
         std::vector<Carte> getCartes() ;
         bool getFin()const;
+        bool getLancerDe()const;
 
         void setNom(std::string nom);
         void setPosX(int posX);
@@ -35,6 +36,7 @@ class Joueur
         void setLogoHypo(BITMAP* logohypo);
         void setCartes(std::vector <Carte> cartes);
         void setFin(bool fin);
+        void setLancerDe(bool lancer);
 
 
         void add(Carte carte);
@@ -59,6 +61,7 @@ class Joueur
         BITMAP* m_imagePion ;
         BITMAP* m_logohypo;
         bool m_fin ;
+        bool m_lancerDe;
 
         std::map <std::string, bool> m_hypothese ;
         std::vector <Carte> m_cartes ;
