@@ -96,7 +96,7 @@ void Menu::launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, st
     }
 
 
-    while(mouse_b&1){}
+    while(mouse_b&1) {}
 
     ///On agit en fonction du choix qui a été fait
     switch(choix)
@@ -124,7 +124,7 @@ void Menu::launch(std::vector <Joueur> &joueurs, std::vector <Carte> &cartes, st
             while(validation == 0)
             {
                 ///Inscirption ou Connexion ?
-                mode=inscriptionConnexion();
+                mode=inscriptionConnexion(broadway);
 
                 ///Si inscription -> verif qu'il existe pas déjà
                 if(mode=='i')
@@ -542,24 +542,44 @@ std::string Menu::saisie1joueur(FONT *broadway)
 /// CHOIX SI INSCRIPTION OU CONNEXION DU JOUEUR ///
 /// /////////////////////////////////////////// ///
 
-char Menu::inscriptionConnexion()
+char Menu::inscriptionConnexion(FONT* broadway)
 {
-    clear_bitmap(screen);
-
-    rectfill(screen, 350, 200, 550, 300, makecol(255, 200, 200)) ;
-    textprintf_ex(screen, font, 400, 250, makecol(255,255,255), -1, "INSCRIPTION");
-    rectfill(screen, 650, 200, 850, 300, makecol(255, 200, 200)) ;
-    textprintf_ex(screen, font, 700, 250, makecol(255,255,255), -1, "CONNEXION");
-
+    BITMAP* fond = load_bitmap("images/tempete.bmp", NULL);
+    BITMAP* page = create_bitmap(SCREEN_W,SCREEN_H);
 
     ///Choix connexion inscription avec appui sur les boutons
     while(1)
     {
-        if(mouse_b&1 and mouse_x>350 and mouse_x<550 and mouse_y>200 and mouse_y<300)
-            return 'i' ;
+        clear_bitmap(page);
+        blit(fond, page,0,0,0,0, SCREEN_W, SCREEN_H);
+        rectfill(page, 250, 200, 550, 300, makecol(0, 0, 0)) ;
+        textprintf_ex(page, broadway, 300, 230, makecol(255,255,255), -1, "INSCRIPTION");
+        rectfill(page, 650, 200, 950, 300, makecol(0, 0, 0)) ;
+        textprintf_ex(page, broadway, 700, 230, makecol(255,255,255), -1, "CONNEXION");
+        if(mouse_x>350 and mouse_x<550 and mouse_y>200 and mouse_y<300)
+        {
+        rectfill(page, 250, 200, 550, 300, makecol(255, 0, 0)) ;
+        textprintf_ex(page, broadway, 300, 230, makecol(255,255,255), -1, "INSCRIPTION");
+            if(mouse_b&1)
+            {
+                destroy_bitmap(page);
+                destroy_bitmap(fond);
+                return 'i' ;
+            }
+        }
 
-        if(mouse_b&1 and mouse_x>650 and mouse_x<850 and mouse_y>200 and mouse_y<300)
-            return 'c' ;
+        if(mouse_x>650 and mouse_x<850 and mouse_y>200 and mouse_y<300)
+        {
+        rectfill(page, 650, 200, 950, 300, makecol(255, 0, 0)) ;
+        textprintf_ex(page, broadway, 700, 230, makecol(255,255,255), -1, "CONNEXION");
+            if(mouse_b&1)
+            {
+                destroy_bitmap(page);
+                destroy_bitmap(fond);
+                return 'c' ;
+            }
+        }
+        blit(page, screen,0,0,0,0, SCREEN_W, SCREEN_H);
     }
 }
 

@@ -12,6 +12,7 @@ Joueur::Joueur()
     m_loca='D' ;
     m_score = 0 ;
     m_couleurPion = "pas de couleur" ;
+    m_lancerDe = false;
 }
 
 Joueur::~Joueur()
