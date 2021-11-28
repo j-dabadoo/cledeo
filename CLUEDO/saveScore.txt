@@ -1,0 +1,15 @@
+a 0
+alex 0
+ariane 0
+b 0
+c 0
+cha 0
+charlotte 4
+d 0
+e 0
+f 0
+jade 3
+michel 10
+oui 0
+pas 0
+thomas 0
